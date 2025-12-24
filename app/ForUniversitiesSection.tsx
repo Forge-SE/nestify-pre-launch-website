@@ -48,7 +48,7 @@ export default function ForUniversitiesSection() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <section className="w-full flex flex-col items-center pt-12 pb-8 px-4 bg-[#181818]">
+    <section className="w-full flex flex-col items-center justify-center px-4 bg-[#181818] min-h-[700px]">
       <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-center">
         {/* Left: Rectangle with animated stats */}
         <div className="flex-1 w-full max-w-md flex justify-center items-center mb-10 md:mb-0">
