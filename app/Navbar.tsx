@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="w-full flex items-center justify-between py-4 px-6 md:px-20 border-b border-zinc-200 bg-white">
+    <nav className="w-full flex items-center justify-between py-4 px-6 md:px-20 bg-white">
       <div className="flex items-center gap-2">
         <Image src="/logo.png" alt="Nestify logo" width={36} height={36} className="rounded-lg" />
         <span className="font-bold text-lg text-zinc-900">nestify</span>
