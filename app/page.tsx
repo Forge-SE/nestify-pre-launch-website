@@ -2,6 +2,7 @@
 import ForCompaniesSection from "./ForCompaniesSection";
 import HowItWorksSection from "./HowItWorksSection";
 import EarlyAccessSection from "./EarlyAccessSection";
+import Footer from "./Footer";
 import ForUniversitiesSection from "./ForUniversitiesSection";
 
 import ProblemSection from "./ProblemSection";
@@ -22,6 +23,7 @@ export default function Home() {
       <ForCompaniesSection />
       <HowItWorksSection />
       <EarlyAccessSection />
+      <Footer />
     </>
   );
 }

@@ -60,7 +60,7 @@ export default function Hero() {
           Join the Waitlist
           <span className="inline-block text-xl">→</span>
         </a>
-        <a href="#learn-more" className="flex items-center gap-2 text-zinc-900 font-medium text-lg hover:underline transition">
+        <a href="#learn-more" className="flex items-center gap-2 text-zinc-900 font-medium text-lg transition">
           Learn more
         </a>
       </div>
