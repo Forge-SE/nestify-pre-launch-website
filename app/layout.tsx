@@ -1,5 +1,7 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "./Navbar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,7 +35,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased font-jakarta">
         {/* Navbar at the top */}
-        {require("./Navbar").default()}
+        <Navbar />
         {children}
       </body>
     </html>
