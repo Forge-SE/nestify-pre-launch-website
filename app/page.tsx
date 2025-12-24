@@ -1,5 +1,6 @@
 
 import ForCompaniesSection from "./ForCompaniesSection";
+import HowItWorksSection from "./HowItWorksSection";
 import ForUniversitiesSection from "./ForUniversitiesSection";
 
 import ProblemSection from "./ProblemSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <ForStudentsSection />
       <ForUniversitiesSection />
       <ForCompaniesSection />
+      <HowItWorksSection />
     </>
   );
 }
