@@ -2,7 +2,9 @@
 import ProblemSection from "./ProblemSection";
 import Hero from "./Hero";
 
+
 import SolutionSection from "./SolutionSection";
+import ForStudentsSection from "./ForStudentsSection";
 
 export default function Home() {
   return (
@@ -10,6 +12,7 @@ export default function Home() {
       <Hero />
       <ProblemSection />
       <SolutionSection />
+      <ForStudentsSection />
     </>
   );
 }
