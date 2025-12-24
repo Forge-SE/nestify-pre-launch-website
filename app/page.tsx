@@ -1,3 +1,4 @@
+import ForUniversitiesSection from "./ForUniversitiesSection";
 
 import ProblemSection from "./ProblemSection";
 import Hero from "./Hero";
@@ -13,6 +14,7 @@ export default function Home() {
       <ProblemSection />
       <SolutionSection />
       <ForStudentsSection />
+      <ForUniversitiesSection />
     </>
   );
 }
