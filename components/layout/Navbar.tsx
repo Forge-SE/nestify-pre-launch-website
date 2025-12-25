@@ -42,21 +42,32 @@ export default function Navbar() {
       </nav>
       {/* Mobile nav drawer */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 flex justify-end backdrop-blur bg-black/15">
-          <div className="w-72 bg-white shadow-lg flex flex-col items-center justify-start p-6 pt-4 animate-slideInRight relative h-fit max-h-screen mt-0 rounded-b-3xl rounded-t-none">
+        <div className="fixed inset-0 z-50 flex flex-col bg-white animate-slideInDown">
+          {/* Header with logo and close button */}
+          <div className="flex items-center justify-between py-4 px-6 border-b border-zinc-100">
+            <div className="flex items-center gap-2">
+              <Image src="/logo.png" alt="Nestify logo" width={36} height={36} className="rounded-lg" />
+              <span className="font-bold text-lg text-zinc-900">nestify</span>
+            </div>
             <button
-              className="absolute top-2 right-2 text-zinc-400 hover:text-zinc-900 text-2xl p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-zinc-200"
+              className="flex items-center justify-center w-10 h-10 rounded-lg border border-zinc-200 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition"
               aria-label="Close menu"
               onClick={() => setMobileOpen(false)}
             >
-              ×
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
-            <nav className="flex flex-col items-center w-full gap-4 mt-8 mb-4">
-              <Link href="#students" className="text-zinc-900 font-semibold text-base w-full text-center py-2 rounded hover:bg-zinc-100 transition" onClick={() => setMobileOpen(false)}>Students</Link>
-              <Link href="#universities" className="text-zinc-900 font-semibold text-base w-full text-center py-2 rounded hover:bg-zinc-100 transition" onClick={() => setMobileOpen(false)}>Universities</Link>
-              <Link href="#companies" className="text-zinc-900 font-semibold text-base w-full text-center py-2 rounded hover:bg-zinc-100 transition" onClick={() => setMobileOpen(false)}>Companies</Link>
-            </nav>
-            <Link href="#waitlist" className="w-full bg-zinc-900 text-white rounded-full px-6 py-3 font-semibold text-base text-center hover:bg-zinc-800 transition block" onClick={() => setMobileOpen(false)}>
+          </div>
+          {/* Navigation links */}
+          <nav className="flex flex-col items-center justify-center flex-1 gap-6 px-6">
+            <Link href="#students" className="text-zinc-900 font-semibold text-2xl py-3 hover:text-[#F97015] transition" onClick={() => setMobileOpen(false)}>Students</Link>
+            <Link href="#universities" className="text-zinc-900 font-semibold text-2xl py-3 hover:text-[#F97015] transition" onClick={() => setMobileOpen(false)}>Universities</Link>
+            <Link href="#companies" className="text-zinc-900 font-semibold text-2xl py-3 hover:text-[#F97015] transition" onClick={() => setMobileOpen(false)}>Companies</Link>
+          </nav>
+          {/* Bottom CTA */}
+          <div className="px-6 pb-8">
+            <Link href="#waitlist" className="w-full bg-zinc-900 text-white rounded-full px-6 py-4 font-semibold text-lg text-center hover:bg-zinc-800 transition block" onClick={() => setMobileOpen(false)}>
               Join Waitlist
             </Link>
           </div>
@@ -69,6 +80,13 @@ export default function Navbar() {
         }
         .animate-slideInRight {
           animation: slideInRight 0.2s cubic-bezier(0.4,0,0.2,1);
+        }
+        @keyframes slideInDown {
+          from { transform: translateY(-100%); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slideInDown {
+          animation: slideInDown 0.25s cubic-bezier(0.4,0,0.2,1);
         }
       `}</style>
     </>

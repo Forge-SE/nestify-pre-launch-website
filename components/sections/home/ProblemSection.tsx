@@ -40,7 +40,7 @@ export default function ProblemSection() {
               <button
                 key={i}
                 className={`flex items-start w-full py-5 px-0 gap-6 text-left transition group focus:outline-none ${isActive ? "bg-white opacity-100" : "bg-transparent opacity-70"}`}
-                onClick={() => setActive(i)}
+                onMouseEnter={() => setActive(i)}
               >
                 <span
                   className={`text-base font-semibold mr-2 select-none transition-colors min-w-8 tabular-nums ${isActive ? "text-[#F97015]" : "text-[#737373]"}`}

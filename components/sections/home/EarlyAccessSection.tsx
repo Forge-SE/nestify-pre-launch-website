@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function EarlyAccessSection() {
   return (
     <section className="w-full flex flex-col items-center justify-center py-32 px-4 bg-white relative">
@@ -23,9 +25,12 @@ export default function EarlyAccessSection() {
         <p className="text-lg text-zinc-500 text-center mb-8 max-w-md mx-auto">
           Nestify is preparing for launch. Early partners get first access to shape the future of student opportunities.
         </p>
-        <button className="bg-zinc-900 text-white font-semibold rounded-full px-6 py-3 text-base flex items-center gap-2 shadow hover:bg-zinc-800 transition mb-12">
+        <Link href="">
+         <button className="bg-zinc-900 text-white font-normal rounded-full px-6 py-3 text-base flex items-center gap-2 shadow hover:bg-zinc-800 transition mb-12">
           Join the Waitlist <span className="ml-2">→</span>
         </button>
+        </Link>
+       
         <hr className="w-full border-zinc-200 mb-6" />
         <div className="text-xs text-zinc-400 text-center mb-6">Trusted by students from</div>
         <div className="flex justify-center gap-8 text-zinc-400 text-sm font-medium">

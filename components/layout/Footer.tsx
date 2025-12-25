@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
       </div>
       {/* <hr className="my-6 border-zinc-100" /> */}
-      <div className="max-w-6xl mx-auto w-full flex flex-col md:flex-row justify-between items-center text-xs text-zinc-400 gap-2">
+      <div className="max-w-6xl mx-auto w-full flex flex-col md:flex-row justify-between items-center text-xs text-zinc-400 gap-2 mt-12">
         <span>© 2025 Nestify. All rights reserved.</span>
         <div className="flex gap-4">
           <Link href="#" className="hover:text-zinc-900 transition">Privacy</Link>

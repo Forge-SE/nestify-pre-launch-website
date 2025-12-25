@@ -34,7 +34,7 @@ const cards = [
   },
   {
     id: 2,
-    companyName: "University of Ghana",
+    companyName: "University of Ghana SRC",
     industry: "Education",
     logoUrl: "/ug.png",
     roleTitle: "Merit Awards Open",
