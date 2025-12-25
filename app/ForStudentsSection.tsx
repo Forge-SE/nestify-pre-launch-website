@@ -46,23 +46,23 @@ export default function ForStudentsSection() {
       <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-between">
         {/* Left: Headline and features */}
         <div className="flex-1 w-full max-w-md">
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-4 md:mb-6">
             <span className="h-0.5 w-8 rounded-full" style={{background:'#F97015'}}></span>
             <span className="uppercase tracking-wider text-xs font-semibold" style={{color:'#F97015',letterSpacing:'0.08em'}}>For Students</span>
           </div>
-          <h2 className="text-4xl md:text-4xl font-bold text-zinc-900 mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-3 md:mb-6">
             More than just school
           </h2>
-          <p className="text-xl text-zinc-500 mb-10">
+          <p className="text-base md:text-xl text-zinc-400 md:text-zinc-500 mb-6 md:mb-10">
             Your academic, social, and career life — organized in one place.
           </p>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4 md:gap-6">
             {features.map((f, i) => (
-              <div key={i} className="flex items-center gap-4">
+              <div key={i} className="flex items-center gap-3 md:gap-4">
                 <span className="flex items-center justify-center">
-                  <Image src={f.icon} alt="feature icon" width={24} height={24} />
+                  <Image src={f.icon} alt="feature icon" width={22} height={22} />
                 </span>
-                <span className="text-base text-zinc-900 font-normal truncate">{f.text}</span>
+                <span className="text-sm md:text-base text-zinc-900 font-normal">{f.text}</span>
               </div>
             ))}
           </div>

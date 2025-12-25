@@ -49,7 +49,7 @@ export default function ForUniversitiesSection() {
   }, []);
   return (
     <section className="w-full flex flex-col items-center justify-center px-4 bg-[#181818] min-h-[500px] md:min-h-[750px]">
-      <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-center">
+      <div className="max-w-6xl w-full flex flex-col-reverse md:flex-row gap-12 md:gap-20 items-center justify-center">
         {/* Left: Rectangle with animated stats */}
         <div className="flex-1 w-full max-w-md flex justify-center items-center mb-10 md:mb-0">
           <div className="relative w-full max-w-sm h-[240px] flex items-center justify-center">
@@ -95,7 +95,7 @@ export default function ForUniversitiesSection() {
           </div>
         </div>
         {/* Right: Headline and features */}
-        <div className="flex-1 w-full max-w-md flex flex-col items-start gap-4">
+        <div className="flex-1 w-full max-w-md flex flex-col items-start gap-4 mt-8 md:mt-0">
           {/* Section Label */}
           <div className="flex items-center gap-3 mb-2">
             <span className="h-0.5 w-8 rounded-full bg-[#F97015]"></span>
@@ -106,7 +106,7 @@ export default function ForUniversitiesSection() {
           {/* Subheading */}
           <p className="text-xl text-zinc-400 mb-2 text-left">Lead and communicate at a whole new level.</p>
           {/* Feature List */}
-          <div className="flex flex-col gap-3 w-full">
+          <div className="flex flex-col gap-5 md:gap-4 w-full">
             {features.map((f, i) => (
               <div key={i} className="flex items-center gap-4">
                 <span className="flex items-center justify-center">

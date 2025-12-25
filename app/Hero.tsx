@@ -51,11 +51,22 @@ export default function Hero() {
         <span className="text-zinc-400 font-[600]">Your opportunities.</span>
       </h1>
       {/* Subtitle */}
-      <p className="mt-6 text-lg text-center text-zinc-500 max-w-xl">
-        Internships, jobs, scholarships, and campus updates — all in<br className="sm:hidden" /> one place. Built by students, for students.
+      <p className="mt-6 text-base md:text-lg text-center text-zinc-400 md:text-zinc-500 max-w-xs md:max-w-xl font-normal md:font-normal mx-auto">
+        Internships, jobs, scholarships, and campus updates — all in one place. Built by students, for students.
       </p>
       {/* Actions */}
-      <div className="mt-8 flex gap-6">
+      {/* Mobile: vertical stack */}
+      <div className="mt-8 flex flex-col items-center gap-6 md:hidden">
+        <a href="#waitlist" className="flex items-center gap-2 bg-zinc-900 text-white rounded-full px-8 py-3 font-medium text-lg hover:bg-zinc-800 transition">
+          Join the Waitlist
+          <span className="inline-block text-xl">→</span>
+        </a>
+        <a href="#learn-more" className="flex items-center gap-2 text-zinc-900 font-medium text-lg transition">
+          Learn more
+        </a>
+      </div>
+      {/* Desktop: horizontal row */}
+      <div className="mt-8 hidden md:flex gap-6 items-center">
         <a href="#waitlist" className="flex items-center gap-2 bg-zinc-900 text-white rounded-full px-8 py-3 font-medium text-lg hover:bg-zinc-800 transition">
           Join the Waitlist
           <span className="inline-block text-xl">→</span>
@@ -65,13 +76,13 @@ export default function Hero() {
         </a>
       </div>
       {/* Stats */}
-      <div className="w-full max-w-4xl mt-16 border-t border-zinc-200 pt-12 flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0">
+      <div className="w-full max-w-4xl mt-10 md:mt-16 border-t border-zinc-200 pt-8 md:pt-12 flex flex-row justify-center items-center gap-6 md:gap-0">
         {stats.map((stat, i) => (
           <div key={stat.label} className="flex-1 flex flex-col items-center">
-            <div className="text-3xl font-bold text-zinc-900">
+            <div className="text-2xl md:text-3xl font-bold text-zinc-900">
               <StatCounter end={stat.value} format={stat.format} suffix={stat.suffix} />
             </div>
-            <div className="mt-2 text-zinc-500 text-base">{stat.label}</div>
+            <div className="mt-1 md:mt-2 text-zinc-500 text-xs md:text-base text-center">{stat.label}</div>
           </div>
         ))}
       </div>
