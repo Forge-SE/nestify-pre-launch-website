@@ -4,12 +4,15 @@ export default function EarlyAccessSection() {
   return (
     <section className="w-full flex flex-col items-center justify-center py-32 px-4 bg-white relative">
       <div className="absolute inset-0 flex justify-center items-center pointer-events-none" aria-hidden="true">
-        <div className="w-[600px] h-[600px] rounded-full" style={{background: 'radial-gradient(circle, #FFF4ED 0%, #fff 80%)', opacity: 0.7}}></div>
+        <div className="w-150 h-150 rounded-full opacity-70" style={{background: 'radial-gradient(circle, #FFF4ED 0%, #fff 80%)' }}></div>
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-xl w-full mx-auto">
         <div className="mb-6">
-          <span className="inline-flex items-center px-6 py-2 rounded-full border border-zinc-200 bg-white text-base font-medium text-zinc-500" style={{gap: '0.5rem'}}>
-            <span className="w-3 h-3 rounded-full bg-[#F97015] mr-2"></span>
+          <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-zinc-200 bg-white text-base font-medium text-zinc-500">
+            <span className="relative flex h-3 w-3 mr-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F97015] opacity-40"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-[#F97015]"></span>
+            </span>
             Early access opening soon
           </span>
         </div>

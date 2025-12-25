@@ -24,8 +24,8 @@ export default function ProblemSection() {
       <div className="max-w-3xl w-full">
         {/* THE PROBLEM */}
         <div className="flex items-center gap-3 mb-6">
-          <span className="h-0.5 w-8 rounded-full" style={{background:'#F97015'}}></span>
-          <span className="uppercase tracking-wider text-xs font-semibold" style={{color:'#F97015',letterSpacing:'0.08em'}}>The Problem</span>
+          <span className="h-0.5 w-8 rounded-full bg-[#F97015]"></span>
+          <span className="uppercase tracking-[0.08em] text-xs font-semibold text-[#F97015]">The Problem</span>
         </div>
         {/* Headline */}
         <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-8">
@@ -39,13 +39,11 @@ export default function ProblemSection() {
             return (
               <button
                 key={i}
-                className={`flex items-start w-full py-5 px-0 gap-6 text-left transition group focus:outline-none ${isActive ? "bg-white" : "bg-transparent"}`}
-                style={{ opacity: isActive ? 1 : 0.7 }}
+                className={`flex items-start w-full py-5 px-0 gap-6 text-left transition group focus:outline-none ${isActive ? "bg-white opacity-100" : "bg-transparent opacity-70"}`}
                 onClick={() => setActive(i)}
               >
                 <span
-                  className={`text-base font-semibold mr-2 select-none transition-colors ${isActive ? "text-[#F97015]" : "text-[#737373]"}`}
-                  style={{minWidth:32, fontVariantNumeric:'tabular-nums'}}
+                  className={`text-base font-semibold mr-2 select-none transition-colors min-w-8 tabular-nums ${isActive ? "text-[#F97015]" : "text-[#737373]"}`}
                 >
                   {String(i+1).padStart(2,'0')}
                 </span>

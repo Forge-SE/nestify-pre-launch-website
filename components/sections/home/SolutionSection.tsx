@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const solutions = [
   {
@@ -29,7 +30,7 @@ export default function SolutionSection() {
         <div className="flex-1 w-full max-w-md">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-0.5 w-8 rounded-full bg-zinc-200"></span>
-            <span className="uppercase tracking-wider text-xs font-semibold text-zinc-400" style={{letterSpacing:'0.08em'}}>The Solution</span>
+            <span className="uppercase tracking-[0.08em] text-xs font-semibold text-zinc-400">The Solution</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 mb-6">
             One platform<br />for everyone
@@ -37,9 +38,9 @@ export default function SolutionSection() {
           <p className="text-lg text-zinc-500 mb-8">
             Nestify brings students, universities, and companies together on a single, unified platform.
           </p>
-          <a href="#waitlist" className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-zinc-200 text-zinc-900 font-medium bg-white hover:bg-zinc-50 transition">
+          <Link href="#waitlist" className="w-full md:w-1/2 flex items-center justify-center gap-2 px-6 py-2 rounded-full border border-zinc-200 text-zinc-900 font-medium bg-white hover:bg-zinc-50 transition">
             Get Early Access <span className="text-xl">→</span>
-          </a>
+          </Link>
         </div>
         {/* Right: Options */}
         <div className="flex-1 w-full flex flex-col gap-6">

@@ -53,8 +53,8 @@ export default function ForCompaniesSection() {
         {/* Left: Headline and features */}
         <div className="flex-1 w-full max-w-md">
           <div className="flex items-center gap-3 mb-6">
-            <span className="h-0.5 w-8 rounded-full" style={{background:'#F97015'}}></span>
-            <span className="uppercase tracking-wider text-xs font-semibold" style={{color:'#F97015',letterSpacing:'0.08em'}}>For Companies</span>
+            <span className="h-0.5 w-8 rounded-full bg-[#F97015]"></span>
+            <span className="uppercase tracking-[0.08em] text-xs font-semibold text-[#F97015]">For Companies</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">
             Find talent faster
@@ -77,14 +77,14 @@ export default function ForCompaniesSection() {
         <div className="flex-1 w-full flex justify-center">
           <div className="relative w-full max-w-xl">
             {/* Layered background rectangles */}
-            <div className="absolute -left-4 top-6 w-full h-full rounded-2xl bg-white shadow-md opacity-80 z-0" style={{filter:'blur(1px)'}}></div>
+            <div className="absolute -left-4 top-6 w-full h-full rounded-2xl bg-white shadow-md opacity-80 z-0 blur-[1px]"></div>
             <div className="absolute left-0 top-0 w-full h-full rounded-2xl bg-white shadow-lg z-0"></div>
-            <div className="relative rounded-2xl border border-zinc-100 bg-white shadow-md pt-8 pb-8 px-8 z-10" style={{minHeight:340}}>
+            <div className="relative rounded-2xl border border-zinc-100 bg-white shadow-md pt-8 pb-8 px-8 z-10 min-h-[340px]">
               {/* Browser window dots inside card */}
               <div className="absolute left-8 top-4 flex gap-2">
-                <span className="w-3 h-3 rounded-full" style={{background:'#E5E5E5'}}></span>
-                <span className="w-3 h-3 rounded-full" style={{background:'#E5E5E5'}}></span>
-                <span className="w-3 h-3 rounded-full" style={{background:'#E5E5E5'}}></span>
+                <span className="w-3 h-3 rounded-full bg-neutral-200"></span>
+                <span className="w-3 h-3 rounded-full bg-neutral-200"></span>
+                <span className="w-3 h-3 rounded-full bg-neutral-200"></span>
               </div>
               {/* Job Card Content */}
               <div className="flex flex-col gap-6 mt-6">

@@ -38,7 +38,7 @@ export default function HowItWorksSection() {
     <section className="w-full bg-white py-24 px-4 flex flex-col items-center mt-20">
       <div className="max-w-5xl w-full mx-auto">
         <div className="mb-12">
-          <div className="uppercase text-xs tracking-widest text-zinc-400 font-semibold mb-2" style={{letterSpacing:'.12em'}}>How it works</div>
+          <div className="uppercase text-xs tracking-[0.12em] text-zinc-400 font-semibold mb-2">How it works</div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-zinc-900 mb-2 leading-tight">
             Simple. Organized.<br />
             <span className="text-zinc-400 font-extrabold">Effective.</span>
@@ -47,12 +47,12 @@ export default function HowItWorksSection() {
         {howItWorks.map((group, idx) => (
           <div key={group.label} className="mb-10">
             <div className="flex items-center gap-3 mb-4">
-              <span className="h-0.5 w-8 rounded-full" style={{background: group.color}}></span>
-              <span className="uppercase tracking-wider text-xs font-semibold" style={{color: group.color, letterSpacing:'0.08em'}}>{group.label}</span>
+              <span className="h-0.5 w-8 rounded-full bg-[#F97015]"></span>
+              <span className="uppercase tracking-[0.08em] text-xs font-semibold text-[#F97015]">{group.label}</span>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {group.steps.map((step) => (
-                <div key={step.num} className="rounded-xl border border-zinc-200 bg-white px-6 py-6 flex flex-col min-w-[180px] min-h-[110px] shadow-sm">
+                <div key={step.num} className="rounded-xl border border-zinc-200 bg-white px-6 py-6 flex flex-col min-w-45 min-h-28 shadow-sm">
                   <div className="text-xs text-zinc-300 font-bold mb-2">{step.num}</div>
                   <div className="text-lg font-semibold text-zinc-900 mb-1">{step.title}</div>
                   <div className="text-sm text-zinc-400">{step.desc}</div>

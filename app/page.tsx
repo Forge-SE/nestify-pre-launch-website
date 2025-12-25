@@ -1,16 +1,14 @@
 
-import ForCompaniesSection from "./ForCompaniesSection";
-import HowItWorksSection from "./HowItWorksSection";
-import EarlyAccessSection from "./EarlyAccessSection";
-import Footer from "./Footer";
-import ForUniversitiesSection from "./ForUniversitiesSection";
 
-import ProblemSection from "./ProblemSection";
-import Hero from "./Hero";
-
-
-import SolutionSection from "./SolutionSection";
-import ForStudentsSection from "./ForStudentsSection";
+import Hero from "@/components/sections/home/Hero";
+import ProblemSection from "@/components/sections/home/ProblemSection";
+import SolutionSection from "@/components/sections/home/SolutionSection";
+import ForStudentsSection from "@/components/sections/home/ForStudentsSection";
+import ForUniversitiesSection from "@/components/sections/home/ForUniversitiesSection";
+import ForCompaniesSection from "@/components/sections/home/ForCompaniesSection";
+import HowItWorksSection from "@/components/sections/home/HowItWorksSection";
+import EarlyAccessSection from "@/components/sections/home/EarlyAccessSection";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
