@@ -83,9 +83,45 @@ export default function EarlyAccessSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <span>University A</span>
-          <span>University B</span>
-          <span>University C</span>
+          <div className="overflow-hidden w-full">
+            <div className="flex gap-8 animate-scroll-universities">
+              {[
+                'ug.png',
+                'KNUST.png',
+                'Academic.png',
+                'Ashesi.png',
+                'ATU.png',
+                'UCC.png',
+                'Central.png',
+              ].map((img, idx) => (
+                <img
+                  key={idx}
+                  src={`/${img}`}
+                  alt={img.replace('.png', '')}
+                  className="h-16 w-auto object-contain"
+                  style={{ minWidth: '120px' }}
+                />
+              ))}
+              {/* Duplicate for infinite effect */}
+              {[
+                'ug.png',
+                'KNUST.png',
+                'Academic.png',
+                'Ashesi.png',
+                'ATU.png',
+                'UCC.png',
+                'Central.png',
+              ].map((img, idx) => (
+                <img
+                  key={`dup-${idx}`}
+                  src={`/${img}`}
+                  alt={img.replace('.png', '')}
+                  className="h-16 w-auto object-contain"
+                  style={{ minWidth: '120px' }}
+                />
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
