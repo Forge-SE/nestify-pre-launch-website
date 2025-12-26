@@ -83,8 +83,8 @@ export default function EarlyAccessSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <div className="overflow-hidden w-full">
-            <div className="flex gap-8 animate-scroll-universities">
+          <div className="overflow-hidden w-full relative" style={{ maxWidth: '900px' }}>
+            <div className="flex gap-8 animate-scroll-universities whitespace-nowrap">
               {[
                 'ug.png',
                 'KNUST.png',
@@ -93,31 +93,21 @@ export default function EarlyAccessSection() {
                 'ATU.png',
                 'UCC.png',
                 'Central.png',
-              ].map((img, idx) => (
+              ].concat([
+                'ug.png',
+                'KNUST.png',
+                'Academic.png',
+                'Ashesi.png',
+                'ATU.png',
+                'UCC.png',
+                'Central.png',
+              ]).map((img, idx) => (
                 <img
                   key={idx}
                   src={`/${img}`}
                   alt={img.replace('.png', '')}
-                  className="h-16 w-auto object-contain"
-                  style={{ minWidth: '120px' }}
-                />
-              ))}
-              {/* Duplicate for infinite effect */}
-              {[
-                'ug.png',
-                'KNUST.png',
-                'Academic.png',
-                'Ashesi.png',
-                'ATU.png',
-                'UCC.png',
-                'Central.png',
-              ].map((img, idx) => (
-                <img
-                  key={`dup-${idx}`}
-                  src={`/${img}`}
-                  alt={img.replace('.png', '')}
-                  className="h-16 w-auto object-contain"
-                  style={{ minWidth: '120px' }}
+                  className="h-24 w-auto object-contain inline-block"
+                  style={{ minWidth: '160px' }}
                 />
               ))}
             </div>

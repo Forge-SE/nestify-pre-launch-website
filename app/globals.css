@@ -8,8 +8,9 @@
 }
 
 .animate-scroll-universities {
-  animation: scroll-universities 20s linear infinite;
-  width: max-content;
+  animation: scroll-universities 25s linear infinite;
+  width: fit-content;
+  display: flex;
 }
 @import "tailwindcss";
 
