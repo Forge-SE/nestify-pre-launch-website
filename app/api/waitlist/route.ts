@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     if (!fullName || !email) {
       return NextResponse.json(
         { error: "Full name and email are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -18,26 +18,24 @@ export async function POST(request: NextRequest) {
     if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       return NextResponse.json(
         { error: "Invalid email format" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const firstName = fullName.split(" ")[0];
     const lastName = fullName.split(" ").slice(1).join(" ") || "";
 
-   const contact = await resend.contacts.create({
+    const contact = await resend.contacts.create({
       email,
       firstName,
       lastName,
-      unsubscribed:false,
+      unsubscribed: false,
     });
 
-    await resend.contacts.segments.add(
-      {
-        email:email,
-        segmentId: process.env.RESEND_SEGMENT_ID as string,
-      }
-    )
+    await resend.contacts.segments.add({
+      email: email,
+      segmentId: process.env.RESEND_SEGMENT_ID as string,
+    });
 
     await resend.emails.send({
       from: "Nestify <hello@mailing.trynestify.xyz>",
@@ -55,22 +53,22 @@ export async function POST(request: NextRequest) {
             <div style="background-color: #ffffff; border-radius: 16px; padding: 40px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
               <!-- Logo -->
               <div style="text-align: center; margin-bottom: 32px;">
-                <img src="https://nestify.com/logo.png" alt="Nestify" width="48" height="48" style="border-radius: 12px;">
+                <img src="https://trynestify.xyz/brandmark.png" alt="Nestify" width="48" height="48" style="border-radius: 12px;">
               </div>
-              
+
               <!-- Heading -->
               <h1 style="font-size: 28px; font-weight: 700; color: #18181b; text-align: center; margin: 0 0 16px 0;">
                 You're on the list, ${firstName}! 🎉
               </h1>
-              
+
               <!-- Subheading -->
               <p style="font-size: 16px; color: #71717a; text-align: center; margin: 0 0 32px 0; line-height: 1.6;">
                 Thanks for joining the Nestify waitlist. You're now part of an exclusive group of early adopters who will be the first to experience the future of student opportunities.
               </p>
-              
+
               <!-- Divider -->
               <div style="border-top: 1px solid #e4e4e7; margin: 32px 0;"></div>
-              
+
               <!-- What's next -->
               <h2 style="font-size: 18px; font-weight: 600; color: #18181b; margin: 0 0 16px 0;">
                 What happens next?
@@ -80,7 +78,7 @@ export async function POST(request: NextRequest) {
                 <li style="margin-bottom: 8px;">You'll get early access before the public launch</li>
                 <li style="margin-bottom: 8px;">Exclusive opportunities to shape the platform</li>
               </ul>
-              
+
               <!-- CTA -->
               <div style="text-align: center;">
                 <a href="https://nestify.com" style="display: inline-block; background-color: #18181b; color: #ffffff; text-decoration: none; padding: 14px 28px; border-radius: 50px; font-weight: 500; font-size: 16px;">
@@ -88,7 +86,7 @@ export async function POST(request: NextRequest) {
                 </a>
               </div>
             </div>
-            
+
             <!-- Footer -->
             <div style="text-align: center; margin-top: 32px;">
               <p style="font-size: 14px; color: #a1a1aa; margin: 0;">
@@ -114,13 +112,13 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       { message: "Successfully joined waitlist" },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error("Waitlist API error:", error);
     return NextResponse.json(
       { error: "Failed to process request" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

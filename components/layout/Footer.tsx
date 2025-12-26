@@ -9,24 +9,42 @@ export default function Footer() {
         {/* Left: Logo and tagline */}
         <div className="flex flex-col gap-2 min-w-55">
           <div className="flex items-center gap-2 mb-1">
-            <Image src="/logo.png" alt="Nestify logo" width={32} height={32} className="rounded-md" />
-            <span className="font-semibold text-zinc-900 text-lg">nestify</span>
+            <Image
+              src="/brandmark.png"
+              alt="Nestify logo"
+              width={100}
+              height={100}
+              className="rounded-md"
+            />
+            {/*<span className="font-semibold text-zinc-900 text-lg">nestify</span>*/}
           </div>
-          <span className="text-zinc-400 text-sm leading-snug">Connecting students to the opportunities that matter.</span>
+          <span className="text-zinc-400 text-sm leading-snug">
+            Connecting students to the opportunities that matter.
+          </span>
         </div>
         {/* Center: Navigation */}
         <div className="flex gap-10 text-zinc-500 text-sm font-medium mt-2 md:mt-0">
-          <Link href="#students" className="hover:text-zinc-900 transition">Students</Link>
-          <Link href="#universities" className="hover:text-zinc-900 transition">Universities</Link>
-          <Link href="#companies" className="hover:text-zinc-900 transition">Companies</Link>
+          <Link href="#students" className="hover:text-zinc-900 transition">
+            Students
+          </Link>
+          <Link href="#universities" className="hover:text-zinc-900 transition">
+            Universities
+          </Link>
+          <Link href="#companies" className="hover:text-zinc-900 transition">
+            Companies
+          </Link>
         </div>
       </div>
       {/* <hr className="my-6 border-zinc-100" /> */}
       <div className="max-w-6xl mx-auto w-full flex flex-col md:flex-row justify-between items-center text-xs text-zinc-400 gap-2 mt-12">
         <span>© 2025 Nestify. All rights reserved.</span>
         <div className="flex gap-4">
-          <Link href="#" className="hover:text-zinc-900 transition">Privacy</Link>
-          <Link href="#" className="hover:text-zinc-900 transition">Terms</Link>
+          <Link href="#" className="hover:text-zinc-900 transition">
+            Privacy
+          </Link>
+          <Link href="#" className="hover:text-zinc-900 transition">
+            Terms
+          </Link>
         </div>
       </div>
       <div className="h-8" />
