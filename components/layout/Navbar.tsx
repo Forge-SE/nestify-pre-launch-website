@@ -25,7 +25,7 @@ export default function Navbar() {
             Companies
           </Link>
         </div>
-        <Link href="#waitlist" className="hidden md:inline-block bg-zinc-900 text-white rounded-full text-base px-8 py-2 font-medium hover:bg-zinc-800 transition">
+        <Link href="/waitlist" className="hidden md:inline-block bg-zinc-900 text-white rounded-full text-base px-8 py-2 font-medium hover:bg-zinc-800 transition">
           Join Waitlist
         </Link>
        
@@ -67,7 +67,7 @@ export default function Navbar() {
           </nav>
           {/* Bottom CTA */}
           <div className="px-6 pb-8">
-            <Link href="#waitlist" className="w-full bg-zinc-900 text-white rounded-full px-6 py-4 font-semibold text-lg text-center hover:bg-zinc-800 transition block" onClick={() => setMobileOpen(false)}>
+            <Link href="/waitlist" className="w-full bg-zinc-900 text-white rounded-full px-6 py-4 font-semibold text-lg text-center hover:bg-zinc-800 transition block" onClick={() => setMobileOpen(false)}>
               Join Waitlist
             </Link>
           </div>
