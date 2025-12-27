@@ -1,16 +1,10 @@
-
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Navbar from "../components/layout/Navbar";
 import "./globals.css";
 
-const geistSans = Geist({
+const plusJarkata = Plus_Jakarta_Sans({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -27,13 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link
+        {/*<link
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap"
           rel="stylesheet"
-        />
-        <link rel="icon" href="/logo.png" type="image/png" />
+        />*/}
+        <link rel="icon" href="/brandmark.png" type="image/png" />
       </head>
-      <body className="antialiased font-jakarta">
+      <body className={`antialiased ${plusJarkata.variable}`}>
         {/* Navbar at the top */}
         <Navbar />
         {children}

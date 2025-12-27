@@ -37,6 +37,7 @@ export async function POST(request: NextRequest) {
       segmentId: process.env.RESEND_SEGMENT_ID as string,
     });
 
+    await new Promise(r => setTimeout(r, 600));
     await resend.emails.send({
       from: "Nestify <hello@mailing.trynestify.xyz>",
       to: email,
