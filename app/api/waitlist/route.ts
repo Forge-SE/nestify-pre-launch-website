@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       firstName,
       lastName,
       unsubscribed: false,
-       segmentId: process.env.RESEND_SEGMENT_ID as string,
+       // segmentId: process.env.RESEND_SEGMENT_ID as string,
     });
 
     // await resend.contacts.segments.add({
