@@ -83,9 +83,35 @@ export default function EarlyAccessSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <span>University A</span>
-          <span>University B</span>
-          <span>University C</span>
+          <div className="overflow-hidden w-full relative" style={{ maxWidth: '900px' }}>
+            <div className="flex gap-8 animate-scroll-universities whitespace-nowrap">
+              {[
+                'ug.png',
+                'KNUST.png',
+                'Academic.png',
+                'Ashesi.png',
+                'ATU.png',
+                'UCC.png',
+                'Central.png',
+              ].concat([
+                'ug.png',
+                'KNUST.png',
+                'Academic.png',
+                'Ashesi.png',
+                'ATU.png',
+                'UCC.png',
+                'Central.png',
+              ]).map((img, idx) => (
+                <img
+                  key={idx}
+                  src={`/${img}`}
+                  alt={img.replace('.png', '')}
+                  className="h-24 w-auto object-contain inline-block"
+                  style={{ minWidth: '160px' }}
+                />
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
