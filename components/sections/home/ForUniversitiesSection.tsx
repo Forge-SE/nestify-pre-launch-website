@@ -21,7 +21,6 @@ const features = [
   },
 ];
 
-
 export default function ForUniversitiesSection() {
   const [hovered, setHovered] = useState(-1);
   // Animated counters
@@ -30,8 +29,12 @@ export default function ForUniversitiesSection() {
   const [posts, setPosts] = useState(0);
 
   useEffect(() => {
-    let r = 0, e = 0, p = 0;
-    const rTarget = 12847, eTarget = 89, pTarget = 24;
+    let r = 0,
+      e = 0,
+      p = 0;
+    const rTarget = 12847,
+      eTarget = 89,
+      pTarget = 24;
     const steps = 60;
     const rStep = Math.ceil(rTarget / steps);
     const eStep = Math.ceil(eTarget / steps);
@@ -43,12 +46,16 @@ export default function ForUniversitiesSection() {
       setReach(r);
       setEngagement(e);
       setPosts(p);
-      if (r === rTarget && e === eTarget && p === pTarget) clearInterval(interval);
+      if (r === rTarget && e === eTarget && p === pTarget)
+        clearInterval(interval);
     }, 18);
     return () => clearInterval(interval);
   }, []);
   return (
-    <section className="w-full flex flex-col items-center justify-center px-4 bg-[#181818] min-h-125 md:min-h-187.5">
+    <section
+      className="w-full flex flex-col items-center justify-center px-4 bg-[#181818] min-h-125 md:min-h-187.5"
+      id="universities"
+    >
       <div className="max-w-6xl w-full flex flex-col-reverse md:flex-row gap-12 md:gap-20 items-center justify-center">
         {/* Left: Rectangle with animated stats */}
         <div className="flex-1 w-full max-w-md flex justify-center items-center mb-10 md:mb-0">
@@ -62,16 +69,28 @@ export default function ForUniversitiesSection() {
                 {/* Animated Counters */}
                 <div className="flex justify-between w-full max-w-xl mx-auto mb-4 mt-6">
                   <div className="flex flex-col items-center">
-                    <span className="text-2xl font-extrabold tracking-tight text-white">{reach.toLocaleString()}</span>
-                    <span className="text-xs font-medium mt-1 text-white/20">Total Reach</span>
+                    <span className="text-2xl font-extrabold tracking-tight text-white">
+                      {reach.toLocaleString()}
+                    </span>
+                    <span className="text-xs font-medium mt-1 text-white/20">
+                      Total Reach
+                    </span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <span className="text-2xl font-extrabold tracking-tight text-white">{engagement}%</span>
-                    <span className="text-xs font-medium mt-1 text-white/20">Engagement</span>
+                    <span className="text-2xl font-extrabold tracking-tight text-white">
+                      {engagement}%
+                    </span>
+                    <span className="text-xs font-medium mt-1 text-white/20">
+                      Engagement
+                    </span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <span className="text-2xl font-extrabold tracking-tight text-white">{posts}</span>
-                    <span className="text-xs font-medium mt-1 text-white/20">Active Posts</span>
+                    <span className="text-2xl font-extrabold tracking-tight text-white">
+                      {posts}
+                    </span>
+                    <span className="text-xs font-medium mt-1 text-white/20">
+                      Active Posts
+                    </span>
                   </div>
                 </div>
                 {/* Bar Chart */}
@@ -84,12 +103,14 @@ export default function ForUniversitiesSection() {
                         height: h,
                         width: 36,
                         opacity: i === 3 ? 1 : 0.85,
-                        background: i === 3 ? '#F97015' : '#FFFFFF33'
+                        background: i === 3 ? "#F97015" : "#FFFFFF33",
                       }}
                     ></div>
                   ))}
                 </div>
-                <div className="text-center text-zinc-400 text-xs mt-1">Weekly engagement</div>
+                <div className="text-center text-zinc-400 text-xs mt-1">
+                  Weekly engagement
+                </div>
               </div>
             </div>
           </div>
@@ -99,20 +120,36 @@ export default function ForUniversitiesSection() {
           {/* Section Label */}
           <div className="flex items-center gap-3 mb-2">
             <span className="h-0.5 w-8 rounded-full bg-[#F97015]"></span>
-            <span className="uppercase tracking-[0.08em] text-xs font-semibold text-[#F97015]">For Universities</span>
+            <span className="uppercase tracking-[0.08em] text-xs font-semibold text-[#F97015]">
+              For Universities
+            </span>
           </div>
           {/* Main Heading */}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-1 text-left">Campus communication,<br />reimagined</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-1 text-left">
+            Campus communication,
+            <br />
+            reimagined
+          </h2>
           {/* Subheading */}
-          <p className="text-xl text-zinc-400 mb-2 text-left">Lead and communicate at a whole new level.</p>
+          <p className="text-xl text-zinc-400 mb-2 text-left">
+            Lead and communicate at a whole new level.
+          </p>
           {/* Feature List */}
           <div className="flex flex-col gap-5 md:gap-4 w-full">
             {features.map((f, i) => (
               <div key={i} className="flex items-center gap-4">
                 <span className="flex items-center justify-center">
-                  <Image src={f.icon} alt="feature icon" width={22} height={22} className="brightness-0 invert" />
+                  <Image
+                    src={f.icon}
+                    alt="feature icon"
+                    width={22}
+                    height={22}
+                    className="brightness-0 invert"
+                  />
                 </span>
-                <span className="text-base text-zinc-100 font-normal">{f.text}</span>
+                <span className="text-base text-zinc-100 font-normal">
+                  {f.text}
+                </span>
               </div>
             ))}
           </div>

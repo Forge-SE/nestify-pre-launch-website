@@ -29,8 +29,12 @@ export default function ForCompaniesSection() {
   const [match, setMatch] = useState(0);
 
   useEffect(() => {
-    let v = 0, s = 0, m = 0;
-    const vTarget = 2100, sTarget = 342, mTarget = 94;
+    let v = 0,
+      s = 0,
+      m = 0;
+    const vTarget = 2100,
+      sTarget = 342,
+      mTarget = 94;
     const steps = 60;
     const vStep = Math.ceil(vTarget / steps);
     const sStep = Math.ceil(sTarget / steps);
@@ -42,19 +46,25 @@ export default function ForCompaniesSection() {
       setViews(v);
       setSaves(s);
       setMatch(m);
-      if (v === vTarget && s === sTarget && m === mTarget) clearInterval(interval);
+      if (v === vTarget && s === sTarget && m === mTarget)
+        clearInterval(interval);
     }, 18);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="w-full flex flex-col items-center pt-24 pb-16 px-4 bg-white">
+    <section
+      className="w-full flex flex-col items-center pt-24 pb-16 px-4 bg-white"
+      id="companies"
+    >
       <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-between">
         {/* Left: Headline and features */}
         <div className="flex-1 w-full max-w-md">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-0.5 w-8 rounded-full bg-[#F97015]"></span>
-            <span className="uppercase tracking-[0.08em] text-xs font-semibold text-[#F97015]">For Companies</span>
+            <span className="uppercase tracking-[0.08em] text-xs font-semibold text-[#F97015]">
+              For Companies
+            </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-6">
             Find talent faster
@@ -66,9 +76,16 @@ export default function ForCompaniesSection() {
             {features.map((f, i) => (
               <div key={i} className="flex items-center gap-4">
                 <span className="flex items-center justify-center">
-                  <Image src={f.icon} alt="feature icon" width={24} height={24} />
+                  <Image
+                    src={f.icon}
+                    alt="feature icon"
+                    width={24}
+                    height={24}
+                  />
                 </span>
-                <span className="text-base text-zinc-900 font-normal truncate">{f.text}</span>
+                <span className="text-base text-zinc-900 font-normal truncate">
+                  {f.text}
+                </span>
               </div>
             ))}
           </div>
@@ -90,33 +107,58 @@ export default function ForCompaniesSection() {
               <div className="flex flex-col gap-6 mt-6">
                 <div className="flex justify-between items-center">
                   <div>
-                    <div className="text-zinc-400 text-base font-medium mb-1">Open Position</div>
-                    <div className="text-2xl font-semibold text-zinc-900">Software Engineering Intern</div>
+                    <div className="text-zinc-400 text-base font-medium mb-1">
+                      Open Position
+                    </div>
+                    <div className="text-2xl font-semibold text-zinc-900">
+                      Software Engineering Intern
+                    </div>
                   </div>
-                  <span className="bg-[#F970151A] text-[#F97015] text-sm font-semibold rounded-lg px-4 py-1">Active</span>
+                  <span className="bg-[#F970151A] text-[#F97015] text-sm font-semibold rounded-lg px-4 py-1">
+                    Active
+                  </span>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  <span className="bg-zinc-100 text-zinc-500 rounded-full px-4 py-1 text-sm font-medium">Computer Science</span>
-                  <span className="bg-zinc-100 text-zinc-500 rounded-full px-4 py-1 text-sm font-medium">Engineering</span>
-                  <span className="bg-zinc-100 text-zinc-500 rounded-full px-4 py-1 text-sm font-medium">Data Science</span>
+                  <span className="bg-zinc-100 text-zinc-500 rounded-full px-4 py-1 text-sm font-medium">
+                    Computer Science
+                  </span>
+                  <span className="bg-zinc-100 text-zinc-500 rounded-full px-4 py-1 text-sm font-medium">
+                    Engineering
+                  </span>
+                  <span className="bg-zinc-100 text-zinc-500 rounded-full px-4 py-1 text-sm font-medium">
+                    Data Science
+                  </span>
                 </div>
                 <div className="flex justify-between items-center border-t border-zinc-200 pt-4">
-                  <div className="text-zinc-500 text-base">248 applications</div>
+                  <div className="text-zinc-500 text-base">
+                    248 applications
+                  </div>
                   <div className="flex -space-x-2">
-                    <Image src="/people.png" alt="people" width={88} height={44} />
+                    <Image
+                      src="/people.png"
+                      alt="people"
+                      width={88}
+                      height={44}
+                    />
                   </div>
                 </div>
                 <div className="grid grid-cols-3 gap-4 mt-2">
                   <div className="flex flex-col items-center justify-center bg-zinc-50 rounded-xl py-4">
-                    <span className="text-2xl font-bold text-zinc-900">{views >= 1000 ? (views/1000).toFixed(1) + 'K' : views}</span>
+                    <span className="text-2xl font-bold text-zinc-900">
+                      {views >= 1000 ? (views / 1000).toFixed(1) + "K" : views}
+                    </span>
                     <span className="text-zinc-400 text-sm mt-1">Views</span>
                   </div>
                   <div className="flex flex-col items-center justify-center bg-zinc-50 rounded-xl py-4">
-                    <span className="text-2xl font-bold text-zinc-900">{saves}</span>
+                    <span className="text-2xl font-bold text-zinc-900">
+                      {saves}
+                    </span>
                     <span className="text-zinc-400 text-sm mt-1">Saves</span>
                   </div>
                   <div className="flex flex-col items-center justify-center bg-zinc-50 rounded-xl py-4">
-                    <span className="text-2xl font-bold text-zinc-900">{match}%</span>
+                    <span className="text-2xl font-bold text-zinc-900">
+                      {match}%
+                    </span>
                     <span className="text-zinc-400 text-sm mt-1">Match</span>
                   </div>
                 </div>

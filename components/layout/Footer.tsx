@@ -10,10 +10,10 @@ export default function Footer() {
         <div className="flex flex-col gap-2 min-w-55">
           <div className="flex items-center gap-2 mb-1">
             <Image
-              src="/brandmark.png"
+              src="/logomark.png"
               alt="Nestify logo"
-              width={100}
-              height={100}
+              width={150}
+              height={150}
               className="rounded-md"
             />
             {/*<span className="font-semibold text-zinc-900 text-lg">nestify</span>*/}

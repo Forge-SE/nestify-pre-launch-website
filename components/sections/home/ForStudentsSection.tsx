@@ -68,13 +68,18 @@ export default function ForStudentsSection() {
   };
 
   return (
-    <section className="w-full flex flex-col items-center pt-24 pb-16 px-4">
+    <section
+      className="w-full flex flex-col items-center pt-24 pb-16 px-4"
+      id="students"
+    >
       <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-between">
         {/* Left: Headline and features */}
         <div className="flex-1 w-full max-w-md">
           <div className="flex items-center gap-3 mb-4 md:mb-6">
             <span className="h-0.5 w-8 rounded-full bg-[#F97015]"></span>
-            <span className="uppercase tracking-[0.08em] text-xs font-semibold text-[#F97015]">For Students</span>
+            <span className="uppercase tracking-[0.08em] text-xs font-semibold text-[#F97015]">
+              For Students
+            </span>
           </div>
           <h2 className="text-2xl md:text-4xl font-bold text-zinc-900 mb-3 md:mb-6">
             More than just school
@@ -86,9 +91,16 @@ export default function ForStudentsSection() {
             {features.map((f, i) => (
               <div key={i} className="flex items-center gap-3 md:gap-4">
                 <span className="flex items-center justify-center">
-                  <Image src={f.icon} alt="feature icon" width={22} height={22} />
+                  <Image
+                    src={f.icon}
+                    alt="feature icon"
+                    width={22}
+                    height={22}
+                  />
                 </span>
-                <span className="text-sm md:text-base text-zinc-900 font-normal">{f.text}</span>
+                <span className="text-sm md:text-base text-zinc-900 font-normal">
+                  {f.text}
+                </span>
               </div>
             ))}
           </div>
@@ -132,8 +144,14 @@ export default function ForStudentsSection() {
                             )}
                           </div>
                           <div className="flex flex-col justify-center items-start">
-                            <span className="text-sm font-semibold text-black">{card.companyName}</span>
-                            {card.industry && <span className="text-xs text-gray-500">{card.industry}</span>}
+                            <span className="text-sm font-semibold text-black">
+                              {card.companyName}
+                            </span>
+                            {card.industry && (
+                              <span className="text-xs text-gray-500">
+                                {card.industry}
+                              </span>
+                            )}
                           </div>
                         </div>
                         <button
@@ -142,19 +160,27 @@ export default function ForStudentsSection() {
                           className={`p-1 rounded transition-colors ${isBookmarked ? "text-[#F97015]" : "text-gray-400 hover:text-gray-600"}`}
                           aria-label="Bookmark job"
                         >
-                          <BookmarkIcon className={`w-5 h-5 ${isBookmarked ? "fill-[#F97015]" : ""}`} />
+                          <BookmarkIcon
+                            className={`w-5 h-5 ${isBookmarked ? "fill-[#F97015]" : ""}`}
+                          />
                         </button>
                       </div>
 
                       <div className="flex flex-col justify-center items-start gap-0.5">
-                        <h3 className="text-base font-semibold text-black">{card.roleTitle}</h3>
+                        <h3 className="text-base font-semibold text-black">
+                          {card.roleTitle}
+                        </h3>
                         {card.compensationOrType && (
-                          <p className="text-xs text-gray-700 font-normal">{card.compensationOrType}</p>
+                          <p className="text-xs text-gray-700 font-normal">
+                            {card.compensationOrType}
+                          </p>
                         )}
                       </div>
                       <div className="flex flex-col justify-center items-start">
                         {card.locationAndDuration && (
-                          <p className="text-gray-500 font-normal text-xs">{card.locationAndDuration}</p>
+                          <p className="text-gray-500 font-normal text-xs">
+                            {card.locationAndDuration}
+                          </p>
                         )}
                       </div>
                     </div>
