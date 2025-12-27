@@ -30,12 +30,13 @@ export async function POST(request: NextRequest) {
       firstName,
       lastName,
       unsubscribed: false,
+       segmentId: process.env.RESEND_SEGMENT_ID as string,
     });
 
-    await resend.contacts.segments.add({
-      email: email,
-      segmentId: process.env.RESEND_SEGMENT_ID as string,
-    });
+    // await resend.contacts.segments.add({
+    //   email: email,
+    //   segmentId: process.env.RESEND_SEGMENT_ID as string,
+    // });
 
     await new Promise(r => setTimeout(r, 600));
     await resend.emails.send({
