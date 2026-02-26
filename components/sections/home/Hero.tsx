@@ -33,8 +33,11 @@ export default function Hero() {
   return (
     <section className="flex min-h-[calc(100vh-82px)] flex-col bg-white pt-14 md:pt-24">
       <div className="flex flex-col items-center gap-4 px-4 text-center">
+        <span className="flex flex-col justify-center items-center px-2 py-1 rounded-md text-sm font-medium bg-orange-300 neue">
+       120+ students on the waitlist
+        </span>
         <motion.h1
-          className="pped w-3/4 text-4xl font-medium leading-tight text-zinc-900 md:w-3/5 md:text-6xl"
+          className="neue w-3/4 text-4xl font-medium leading-tight text-zinc-900 md:w-3/5 md:text-6xl"
           variants={headingVariants}
           initial="hidden"
           animate="visible"
@@ -75,7 +78,7 @@ export default function Hero() {
       >
         <div className="mx-auto w-full max-w-6xl overflow-hidden rounded-[32px]">
           <Image
-            src="/hero-bg.jpg"
+            src="/hero.jpg"
             alt="Hero Image"
             width={1920}
             height={820}
@@ -83,6 +86,10 @@ export default function Hero() {
             priority
           />
         </div>
+      </motion.div>
+
+      <motion.div className="flex w-full justify-between items-center">
+        
       </motion.div>
     </section>
   );

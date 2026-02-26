@@ -10,7 +10,12 @@
 
 @font-face {
   font-family: "PPEditorialItalic";
-  src: url("/fonts/ppeditorialold-ultralightitalic.otf") format("opentype");
+    src: url("/fonts/ppeditorialold-ultralightitalic.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "NeueHaas";
+  src: url("/fonts/NeueHaasDisplayMediu.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -21,6 +26,10 @@
 .pped-italic {
   font-family: "PPEditorialItalic", serif;
   
+}
+
+.neue{
+  font-family: "NeueHaas", serif;
 }
 @keyframes scroll-universities {
   0% {
