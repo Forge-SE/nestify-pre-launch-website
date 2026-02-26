@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import StatCounter from "@/components/core/StatsCounter";
 import { headingVariants, subtextVariants, buttonVariants } from "@/components/animations/Animation";
+import Image from "next/image";
 
 const stats = [
   { label: "Universities", value: 3, suffix: "+" },
@@ -30,81 +31,58 @@ export default function Hero() {
   };
 
   return (
-    <section className="flex flex-col items-center w-full pt-16 pb-12 relative" onMouseMove={handleMouseMove}>
+    <section className="flex min-h-[calc(100vh-82px)] flex-col bg-white pt-14 md:pt-24">
+      <div className="flex flex-col items-center gap-4 px-4 text-center">
+        <motion.h1
+          className="pped w-3/4 text-4xl font-medium leading-tight text-zinc-900 md:w-3/5 md:text-6xl"
+          variants={headingVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          Your campus.Your opportunities.
+        </motion.h1>
+        <motion.p
+          className="text-lg font-medium text-zinc-700 md:text-base"
+          variants={subtextVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          The ultimate platform connecting students, universities, and companies for unparalleled opportunities.
+        </motion.p>
+
+        <motion.div variants={buttonVariants} initial="hidden" animate="visible">
+          <Link
+            href="/waitlist"
+            className="group inline-flex overflow-hidden rounded-xl bg-[#221e1b] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-zinc-900 hover:text-white"
+          >
+            <span className="relative block h-5 overflow-hidden leading-5">
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+                Join Waitlist
+              </span>
+              <span className="absolute left-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+                Join Waitlist
+              </span>
+            </span>
+          </Link>
+        </motion.div>
+      </div>
+
       <motion.div
-        className="absolute inset-0 flex justify-center items-center pointer-events-none"
-        style={{ x, y }}
+        variants={buttonVariants}
+        initial="hidden"
+        animate="visible"
+        className="mt-16 w-full px-4 md:mt-20 md:px-10"
       >
-        <div className="w-150 h-150 rounded-full opacity-70" style={{ background: 'radial-gradient(circle, #FFF4ED 0%, #fff 80%)' }} />
-      </motion.div>
-      <motion.div 
-        className="mb-8 relative z-10"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <span className="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-white border border-zinc-200 text-[15px] font-normal text-zinc-700 leading-[22px]">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F97015] opacity-40"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F97015]"></span>
-          </span>
-          Launching soon
-        </span>
-      </motion.div>
-      <motion.h1 
-        className="text-5xl md:text-6xl font-bold text-center text-zinc-900 leading-tight relative z-10"
-        initial={headingVariants.hidden()}
-        animate={headingVariants.visible(0.1)}
-      >
-        Your campus.<br />
-        <span className="text-zinc-400 font-semibold">Your opportunities.</span>
-      </motion.h1>
-      <motion.p 
-        className="mt-6 text-base md:text-lg text-center text-zinc-400 md:text-zinc-500 max-w-xs md:max-w-xl font-normal md:font-normal mx-auto relative z-10"
-        initial={subtextVariants.hidden()}
-        animate={subtextVariants.visible(0.2)}
-      >
-        Internships, jobs, scholarships, and campus updates — all in one place. Built by students, for students.
-      </motion.p>
-      <motion.div 
-        className="mt-8 flex flex-col items-center gap-6 md:hidden relative z-10"
-        initial={buttonVariants.hidden()}
-        animate={buttonVariants.visible(0.3)}
-      >
-        <Link href="/waitlist" className="flex items-center gap-2 bg-zinc-900 text-white rounded-full px-8 py-3 font-medium text-lg hover:bg-zinc-800 transition">
-          Join the Waitlist
-          <span className="inline-block text-xl">→</span>
-        </Link>
-        <Link href="#problem" className="flex items-center gap-2 text-zinc-900 font-medium text-lg transition">
-          Learn more
-        </Link>
-      </motion.div>
-      <motion.div 
-        className="mt-8 hidden md:flex gap-6 items-center relative z-10"
-        initial={buttonVariants.hidden()}
-        animate={buttonVariants.visible(0.3)}
-      >
-        <Link href="/waitlist" className="flex justify-center items-center gap-2 bg-zinc-900 text-white rounded-full px-8 py-3 font-medium text-base hover:bg-zinc-800 transition">
-          Join the Waitlist →
-        </Link>
-        <Link href="#problem" className="flex items-center gap-2 text-zinc-900 font-medium text-base transition hover:bg-gray-200 px-8 py-3 rounded-full">
-          Learn more
-        </Link>
-      </motion.div>
-      <motion.div 
-        className="w-full max-w-4xl mt-10 md:mt-16 border-t border-zinc-200 pt-8 md:pt-12 flex flex-row justify-center items-center gap-6 md:gap-0 relative z-10"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-      >
-        {stats.map((stat, i) => (
-          <div key={stat.label} className="flex-1 flex flex-col items-center">
-            <div className="text-2xl md:text-3xl font-bold text-zinc-900">
-              <StatCounter end={stat.value} format={stat.format} suffix={stat.suffix} />
-            </div>
-            <div className="mt-1 md:mt-2 text-zinc-500 text-xs md:text-base text-center">{stat.label}</div>
-          </div>
-        ))}
+        <div className="mx-auto w-full max-w-6xl overflow-hidden rounded-[32px]">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Hero Image"
+            width={1920}
+            height={820}
+            className="h-[260px] w-full object-cover md:h-[420px]"
+            priority
+          />
+        </div>
       </motion.div>
     </section>
   );

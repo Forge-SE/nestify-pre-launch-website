@@ -1,3 +1,27 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "PPEditorial";
+  src: url("/fonts/PPEditorialNew-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPEditorialItalic";
+  src: url("/fonts/ppeditorialold-ultralightitalic.otf") format("opentype");
+  font-display: swap;
+}
+
+.pped {
+  font-family: "PPEditorial", serif;
+}
+
+.pped-italic {
+  font-family: "PPEditorialItalic", serif;
+  
+}
 @keyframes scroll-universities {
   0% {
     transform: translateX(0);
@@ -12,8 +36,6 @@
   width: fit-content;
   display: flex;
 }
-@import "tailwindcss";
-
 :root {
     --background: #ffffff;
     --foreground: #171717;

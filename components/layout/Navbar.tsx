@@ -1,72 +1,84 @@
 "use client";
-import { Jersey_10 } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <>
-      <nav className="w-full flex items-center justify-between py-4 px-6 md:px-20 md:py-10 bg-white">
-        <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2">
+      <nav className="w-full border-t-2 border-[#5b2740] bg-white px-4 py-4 md:border-t-0 md:px-10">
+        <div className="relative mx-auto flex max-w-7xl items-center justify-between">
+          <div className=" hidden items-center gap-8 text-sm font-normal text-zinc-900 md:flex">
+            <Link href="#students" className="transition-opacity hover:opacity-65">
+              About
+            </Link>
+            <Link
+              href="#universities"
+              className="transition-opacity hover:opacity-65"
+            >
+              Case Studies
+            </Link>
+            <Link href="#companies" className="transition-opacity hover:opacity-65">
+              News
+            </Link>
+          </div>
+
+          <Link
+            href="/"
+          >
             <Image
-              src="/logomark.png"
-              alt="Nestify logo"
-              width={100}
-              height={100}
+              src="/brandmark.png"
+              alt="Nestify"
+              width={50}
+              height={50}
               className="rounded-lg"
             />
-            {/*<span className="font-bold text-lg text-zinc-900">nestify</span>*/}
           </Link>
-        </div>
-        <div className="hidden md:flex gap-8 text-zinc-500 font-medium">
-          <Link href="#students" className="hover:text-zinc-900 transition">
-            Students
-          </Link>
-          <Link href="#universities" className="hover:text-zinc-900 transition">
-            Universities
-          </Link>
-          <Link href="#companies" className="hover:text-zinc-900 transition">
-            Companies
-          </Link>
-        </div>
-        <Link
-          href="/waitlist"
-          className="hidden md:inline-block bg-zinc-900 text-white rounded-full text-base px-8 py-2 font-medium hover:bg-zinc-800 transition"
-        >
-          Join Waitlist
-        </Link>
 
-        {/* Hamburger for mobile */}
-        <button
-          className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg border border-zinc-200 ml-2"
-          aria-label="Open menu"
-          onClick={() => setMobileOpen(true)}
-        >
-          <span className="block w-6 h-0.5 bg-zinc-900 mb-1 rounded"></span>
-          <span className="block w-6 h-0.5 bg-zinc-900 mb-1 rounded"></span>
-          <span className="block w-6 h-0.5 bg-zinc-900 rounded"></span>
-        </button>
+          <Link
+            href="/waitlist"
+            className="group hidden overflow-hidden rounded-xl bg-[#221e1b] px-6 py-3 text-sm font-semibold hover:bg-zinc-900 transition-colors  text-white md:inline-flex"
+          >
+            <span className="relative block h-5 overflow-hidden leading-5">
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+                Join Waitlist
+              </span>
+              <span className="absolute left-0 top-full block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+                Join Waitlist
+              </span>
+            </span>
+          </Link>
+
+          <button
+            className="ml-auto flex h-10 w-10 flex-col items-center justify-center md:hidden"
+            aria-label="Open menu"
+            onClick={() => setMobileOpen(true)}
+          >
+            <span className="mb-1.5 block h-0.5 w-5 rounded bg-zinc-900"></span>
+            <span className="block h-0.5 w-5 rounded bg-zinc-900"></span>
+          </button>
+        </div>
       </nav>
-      {/* Mobile nav drawer */}
+
       {mobileOpen && (
         <div className="fixed inset-0 z-50 flex flex-col bg-white animate-slideInDown">
-          {/* Header with logo and close button */}
-          <div className="flex items-center justify-between py-4 px-6 border-b border-zinc-100">
-            <div className="flex items-center gap-2">
-              <Image
-                src="/brandmark.png"
-                alt="Nestify logo"
-                width={36}
-                height={36}
-                className="rounded-lg"
-              />
-              <span className="font-bold text-lg text-zinc-900">nestify</span>
-            </div>
+          <div className="flex items-center justify-between  px-4 py-4">
+            <span
+              className="text-[46px] leading-none text-zinc-900"
+              
+            >
+               <Image
+              src="/brandmark.png"
+              alt="Nestify"
+              width={50}
+              height={50}
+              className="rounded-lg"
+            />
+            </span>
             <button
-              className="flex items-center justify-center w-10 h-10 rounded-lg border border-zinc-200 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition"
+              className="flex h-10 w-10 items-center justify-center text-zinc-700 transition hover:text-zinc-900"
               aria-label="Close menu"
               onClick={() => setMobileOpen(false)}
             >
@@ -86,35 +98,35 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-          {/* Navigation links */}
-          <nav className="flex flex-col items-center justify-center flex-1 gap-6 px-6">
+
+          <nav className="pped flex flex-1 flex-col items-center justify-center gap-6 px-6">
             <Link
               href="#students"
-              className="text-zinc-900 font-semibold text-2xl py-3 hover:text-[#F97015] transition"
+              className="py-3 text-2xl font-normal text-zinc-900 transition hover:text-[#221e1b]"
               onClick={() => setMobileOpen(false)}
             >
-              Students
+              About
             </Link>
             <Link
               href="#universities"
-              className="text-zinc-900 font-semibold text-2xl py-3 hover:text-[#F97015] transition"
+              className="py-3 text-2xl font-normal text-zinc-900 transition hover:text-[#221e1b]"
               onClick={() => setMobileOpen(false)}
             >
-              Universities
+              Case Studies
             </Link>
             <Link
               href="#companies"
-              className="text-zinc-900 font-semibold text-2xl py-3 hover:text-[#F97015] transition"
+              className="py-3 text-2xl font-normal text-zinc-900 transition hover:text-[#221e1b]"
               onClick={() => setMobileOpen(false)}
             >
-              Companies
+              News
             </Link>
           </nav>
-          {/* Bottom CTA */}
+
           <div className="px-6 pb-8">
             <Link
               href="/waitlist"
-              className="w-full bg-zinc-900 text-white rounded-full px-6 py-4 font-semibold text-lg text-center hover:bg-zinc-800 transition block"
+              className="block w-full rounded-2xl bg-[#11100f] px-6 py-4 text-center text-lg font-semibold text-white transition hover:bg-[#3a2111]"
               onClick={() => setMobileOpen(false)}
             >
               Join Waitlist
@@ -122,18 +134,8 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
       <style jsx global>{`
-        @keyframes slideInRight {
-          from {
-            transform: translateX(100%);
-          }
-          to {
-            transform: translateX(0);
-          }
-        }
-        .animate-slideInRight {
-          animation: slideInRight 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
         @keyframes slideInDown {
           from {
             transform: translateY(-100%);
