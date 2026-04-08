@@ -1,16 +1,9 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "PPEditorial";
-  src: url("/fonts/PPEditorialNew-Light.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-}
 
 @font-face {
-  font-family: "PPEditorialItalic";
-    src: url("/fonts/ppeditorialold-ultralightitalic.otf") format("opentype");
+  font-family: "Sora";
+    src: url("/fonts/Sora-Variable.ttf") format("truetype");
   font-display: swap;
 }
 @font-face {
@@ -19,57 +12,17 @@
   font-display: swap;
 }
 
-.pped {
-  font-family: "PPEditorial", serif;
-}
-
-.pped-italic {
-  font-family: "PPEditorialItalic", serif;
-  
+.sora {
+  font-family: "Sora", serif;
 }
 
 .neue{
   font-family: "NeueHaas", serif;
 }
-@keyframes scroll-universities {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
-.animate-scroll-universities {
-  animation: scroll-universities 25s linear infinite;
-  width: fit-content;
-  display: flex;
-}
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
-}
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
-}
 
-body {
-    background: #fff;
-    color: var(--foreground);
-    font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
-    scroll-behavior: smooth;
-}
 
 html {
     scroll-behavior: smooth;
