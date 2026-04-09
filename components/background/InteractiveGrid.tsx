@@ -96,13 +96,16 @@ export function InteractiveGrid() {
             cell.opacity = 1;
           } else {
             
-            cell.opacity = Math.max(0, cell.opacity - 0.03);
+            // Fades out slower so the opacity stays higher for longer
+            cell.opacity = Math.max(0, cell.opacity - 0.015);
           }
 
           
           if (cell.opacity > 0.01) {
             
-            ctx.fillStyle = `rgba(255, 115, 0, ${cell.opacity})`;
+            
+            // Much darker burnt orange
+            ctx.fillStyle = `rgba(154, 52, 18, ${cell.opacity})`; 
             ctx.fillRect(cellX, cellY, cellSize, cellSize);
           }
         }
