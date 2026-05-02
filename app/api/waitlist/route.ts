@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
 
               <!-- CTA -->
               <div style="text-align: center;">
-                <a href="https://nestify.com" style="display: inline-block; background-color: #18181b; color: #ffffff; text-decoration: none; padding: 14px 28px; border-radius: 50px; font-weight: 500; font-size: 16px;">
+                <a href="https://trynestify.xyz" style="display: inline-block; background-color: #18181b; color: #ffffff; text-decoration: none; padding: 14px 28px; border-radius: 50px; font-weight: 500; font-size: 16px;">
                   Visit Nestify →
                 </a>
               </div>
