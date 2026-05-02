@@ -1,44 +1,102 @@
-@keyframes scroll-universities {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll-universities {
-  animation: scroll-universities 25s linear infinite;
-  width: fit-content;
-  display: flex;
-}
 @import "tailwindcss";
 
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
+/* Neue.Alte.Grotesk Font Family */
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-display: swap;
 }
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
 }
 
-body {
-    background: #fff;
-    color: var(--foreground);
-    font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
-    scroll-behavior: smooth;
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-Heavy.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue.Alte.Grotesk";
+  src: url("/fonts/Neue.Alte.Grotesk/NeueAlteGrotesk-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hemming";
+    src: url("/fonts/Hemming.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sora";
+  src: url("/fonts/Sora-Variable.ttf") format("truetype");
+  font-display: swap;
+}
+
+.sora {
+  font-family: "Sora", serif;
+}
+
+.hemming{
+  font-family: "Hemming", serif;
+}
+
+.neue-alte {
+  font-family: "Neue.Alte.Grotesk", sans-serif;
+}
+
+
+
+
 
 html {
     scroll-behavior: smooth;
