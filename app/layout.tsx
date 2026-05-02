@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "../components/layout/Navbar";
 import "./globals.css";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         {/* Navbar at the top */}
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
