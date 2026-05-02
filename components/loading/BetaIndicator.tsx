@@ -53,7 +53,7 @@ export function BetaIndicator() {
         <motion.span
           key={`${letter}-${index}`}
           variants={letterVariants}
-          className="text-6xl font-normal text-white inline-block"
+          className="text-6xl font-normal text-orange-700 inline-block"
           style={{ fontFamily: "Hemming" }}
         >
           {letter === " " ? "\u00a0" : letter}

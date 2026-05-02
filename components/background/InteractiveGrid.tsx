@@ -2,7 +2,11 @@
 
 import { useEffect, useRef } from "react";
 
-export function InteractiveGrid() {
+interface InteractiveGridProps {
+  interactive?: boolean;
+}
+
+export function InteractiveGrid({ interactive = true }: InteractiveGridProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -43,6 +47,7 @@ export function InteractiveGrid() {
     resize();
 
     const handleMouseMove = (e: MouseEvent) => {
+      if (!interactive) return;
       const rect = canvas.getBoundingClientRect();
       mouseX = e.clientX - rect.left;
       mouseY = e.clientY - rect.top;
@@ -53,8 +58,10 @@ export function InteractiveGrid() {
       mouseY = -1000;
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    document.body.addEventListener("mouseleave", handleMouseLeave);
+    if (interactive) {
+      window.addEventListener("mousemove", handleMouseMove);
+      document.body.addEventListener("mouseleave", handleMouseLeave);
+    }
 
     let animationFrameId: number;
 
@@ -84,27 +91,22 @@ export function InteractiveGrid() {
           const cellX = i * cellSize;
           const cellY = j * cellSize;
 
-          
-          const isHovered =
-            mouseX >= cellX &&
-            mouseX < cellX + cellSize &&
-            mouseY >= cellY &&
-            mouseY < cellY + cellSize;
+          if (interactive) {
+            const isHovered =
+              mouseX >= cellX &&
+              mouseX < cellX + cellSize &&
+              mouseY >= cellY &&
+              mouseY < cellY + cellSize;
 
-          if (isHovered) {
-         
-            cell.opacity = 1;
-          } else {
-            
-            // Fades out slower so the opacity stays higher for longer
-            cell.opacity = Math.max(0, cell.opacity - 0.015);
+            if (isHovered) {
+              cell.opacity = 1;
+            } else {
+              cell.opacity = Math.max(0, cell.opacity - 0.015);
+            }
           }
 
           
           if (cell.opacity > 0.01) {
-            
-            
-            // Much darker burnt orange
             ctx.fillStyle = `rgba(154, 52, 18, ${cell.opacity})`; 
             ctx.fillRect(cellX, cellY, cellSize, cellSize);
           }
@@ -118,11 +120,13 @@ export function InteractiveGrid() {
 
     return () => {
       window.removeEventListener("resize", resize);
-      window.removeEventListener("mousemove", handleMouseMove);
-      document.body.removeEventListener("mouseleave", handleMouseLeave);
+      if (interactive) {
+        window.removeEventListener("mousemove", handleMouseMove);
+        document.body.removeEventListener("mouseleave", handleMouseLeave);
+      }
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [interactive]);
 
   return (
     <canvas

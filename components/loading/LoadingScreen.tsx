@@ -22,7 +22,7 @@ export function LoadingScreen({ children }: LoadingScreenProps) {
             y: "-100%",
             transition: { duration: 0.6, ease: "easeInOut" },
           }}
-          className="fixed inset-0 bg-orange-500 z-50 overflow-hidden"
+          className="fixed inset-0 bg-[#f7e2bc] z-50 overflow-hidden"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -33,14 +33,14 @@ export function LoadingScreen({ children }: LoadingScreenProps) {
             <BetaIndicator />
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", stiffness: 80, damping: 20, delay: 1.2 }}
             className="absolute bottom-0 translate-y-[20%] left-0 right-0 flex justify-center w-full"
           >
             <NestifyAnimation />
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       )}
 

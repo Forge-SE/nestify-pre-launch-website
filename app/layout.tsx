@@ -29,7 +29,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/brandmark.png" type="image/png" />
       </head>
-      <body className={`antialiased bg-[#0a0a0a] text-white ${plusJarkata.variable} ${chivoMono.variable}`}>
+      <body className={`antialiased bg-[#0a0a0a]  text-white ${plusJarkata.variable} ${chivoMono.variable}`}>
         <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
